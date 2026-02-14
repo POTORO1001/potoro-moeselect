@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>学校会話シーン（アニメ風／先生×生徒イラスト版）｜萌えセレクト講義 Ver1.1</title>
+<title>学校会話シーン（アニメ風／先生×生徒イラスト版）｜萌えセレクト講義 Ver1.2</title>
 <style>
   :root{
     --wall1:#f2f6ff; --wall2:#e8f0ff; --floor:#e3d7c8;
@@ -223,69 +223,127 @@
       <div class="lectern"></div>
       <div class="desks"><div class="desk d1"></div><div class="desk d2"></div></div>
 
-      <!-- ▼ アニメ風イラスト（SVG）：先生（左） -->
-      <svg class="char teacher" viewBox="0 0 300 300" aria-label="先生(メガネ・スーツ)">
+      <!-- ▼ かわいい先生（SVG） -->
+      <svg class="char teacher" viewBox="0 0 300 300" aria-label="先生(メガネ・スーツ・かわいい)">
         <defs>
-          <linearGradient id="skinT" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#ffd9c7"/><stop offset="1" stop-color="#f7bfa6"/>
+          <linearGradient id="skinT2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffe0d1"/><stop offset="1" stop-color="#f9c2ad"/>
           </linearGradient>
-          <linearGradient id="suit" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#2a2f3a"/><stop offset="1" stop-color="#1c2028"/>
+          <linearGradient id="hairT2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#2b2b2b"/><stop offset="1" stop-color="#141414"/>
           </linearGradient>
+          <linearGradient id="suitT2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#2b3342"/><stop offset="1" stop-color="#161b24"/>
+          </linearGradient>
+          <linearGradient id="shineT2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="rgba(255,255,255,.85)"/>
+            <stop offset="1" stop-color="rgba(255,255,255,0)"/>
+          </linearGradient>
+          <filter id="softShadowT2" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="rgba(0,0,0,.18)"/>
+          </filter>
         </defs>
-        <!-- 影 -->
-        <ellipse cx="150" cy="280" rx="80" ry="12" fill="rgba(0,0,0,.14)"/>
-        <!-- 髪 -->
-        <path d="M210 88c0 38-40 54-60 54s-60-16-60-54c0-30 26-50 60-50s60 20 60 50z" fill="#1f1f1f"/>
-        <!-- 顔 -->
-        <ellipse cx="150" cy="120" rx="46" ry="42" fill="url(#skinT)"/>
-        <!-- メガネ -->
-        <g fill="none" stroke="#3b3f46" stroke-width="3">
-          <rect x="115" y="112" width="30" height="16" rx="4"/>
-          <rect x="155" y="112" width="30" height="16" rx="4"/>
-          <path d="M145 120h10"/>
+
+        <ellipse cx="150" cy="282" rx="86" ry="13" fill="rgba(0,0,0,.12)"/>
+
+        <path d="M92 112c0-38 28-64 58-64 20 0 38 10 50 26 10 12 16 27 16 44 0 18-6 34-18 46-10 10-27 18-48 18-34 0-58-18-58-70z"
+              fill="url(#hairT2)"/>
+        <path d="M105 112c10-18 28-28 46-28 14 0 26 4 36 12-10 4-16 12-20 18-10-10-36-10-62-2z"
+              fill="#1b1b1b" opacity=".95"/>
+
+        <g filter="url(#softShadowT2)">
+          <ellipse cx="150" cy="132" rx="50" ry="46" fill="url(#skinT2)"/>
+          <ellipse cx="122" cy="150" rx="12" ry="7" fill="#ff9db7" opacity=".35"/>
+          <ellipse cx="178" cy="150" rx="12" ry="7" fill="#ff9db7" opacity=".35"/>
         </g>
-        <!-- 目・口 -->
-        <circle cx="130" cy="120" r="3" fill="#2a2a2a"/>
-        <circle cx="170" cy="120" r="3" fill="#2a2a2a"/>
-        <path d="M136 138c10 6 18 6 28 0" stroke="#b36b6b" stroke-width="3" fill="none"/>
-        <!-- スーツ -->
-        <path d="M80 260c10-60 20-120 70-120s60 60 70 120H80z" fill="url(#suit)"/>
-        <!-- シャツ・ネクタイ -->
-        <path d="M140 152l10 0 10 16-30 0z" fill="#e8f0ff"/>
-        <path d="M150 168l12 40h-24z" fill="#3f5d8e"/>
-        <!-- 手（チョーク持ち風の白） -->
-        <circle cx="108" cy="210" r="8" fill="#ffffff" stroke="#d0d0d0"/>
+
+        <g fill="none" stroke="#4a4f58" stroke-width="3">
+          <circle cx="130" cy="132" r="16"/>
+          <circle cx="170" cy="132" r="16"/>
+          <path d="M146 132h8"/>
+        </g>
+
+        <path d="M122 132c4 6 12 6 16 0" stroke="#2a2a2a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M162 132c4 6 12 6 16 0" stroke="#2a2a2a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M136 154c10 10 18 10 28 0" stroke="#b36b6b" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+        <g filter="url(#softShadowT2)">
+          <path d="M78 266c8-72 26-128 72-128s64 56 72 128H78z" fill="url(#suitT2)"/>
+          <path d="M96 168c18-18 36-26 54-26 10 0 20 2 30 7-20 0-44 12-60 34-8 12-14 28-16 46-6-22-4-46-8-61z"
+                fill="url(#shineT2)" opacity=".35"/>
+          <path d="M130 156h40l-10 18h-20z" fill="#eef6ff"/>
+          <path d="M150 174l10 38h-20z" fill="#4a73b8"/>
+          <circle cx="150" cy="174" r="6" fill="#3e63a3"/>
+        </g>
+
+        <g>
+          <circle cx="108" cy="210" r="10" fill="#ffe0d1"/>
+          <rect x="96" y="204" width="18" height="6" rx="3" fill="#ffffff" stroke="#d7d7d7"/>
+          <path d="M120 196l3 6 6 3-6 3-3 6-3-6-6-3 6-3z" fill="#fff" opacity=".9"/>
+        </g>
       </svg>
 
-      <!-- ▼ アニメ風イラスト（SVG）：生徒（右・セーラー服） -->
-      <svg class="char student" viewBox="0 0 300 300" aria-label="生徒(セーラー服)">
+      <!-- ▼ かわいい生徒（SVG） -->
+      <svg class="char student" viewBox="0 0 300 300" aria-label="生徒(セーラー服・かわいい)">
         <defs>
-          <linearGradient id="skinS" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#ffd9c7"/><stop offset="1" stop-color="#f7bfa6"/>
+          <linearGradient id="skinS2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffe0d1"/><stop offset="1" stop-color="#f9c2ad"/>
           </linearGradient>
-          <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#21306a"/><stop offset="1" stop-color="#15214f"/>
+          <linearGradient id="hairS2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#7a3a2e"/><stop offset="1" stop-color="#4b221b"/>
           </linearGradient>
+          <linearGradient id="navyS2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#233a7a"/><stop offset="1" stop-color="#142154"/>
+          </linearGradient>
+          <linearGradient id="eyeS2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#5a2aff"/><stop offset="1" stop-color="#1fb6ff"/>
+          </linearGradient>
+          <filter id="softShadowS2" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="rgba(0,0,0,.18)"/>
+          </filter>
         </defs>
-        <ellipse cx="150" cy="280" rx="78" ry="12" fill="rgba(0,0,0,.14)"/>
-        <!-- 髪（茶） -->
-        <path d="M210 95c0 40-40 58-60 58s-60-18-60-58c0-28 24-48 60-48s60 20 60 48z" fill="#5b2b20"/>
-        <!-- 顔 -->
-        <ellipse cx="150" cy="128" rx="44" ry="40" fill="url(#skinS)"/>
-        <!-- 目・口（アニメ風） -->
-        <ellipse cx="132" cy="128" rx="5" ry="7" fill="#2a2a2a"/>
-        <ellipse cx="168" cy="128" rx="5" ry="7" fill="#2a2a2a"/>
-        <path d="M135 146c8 6 22 6 30 0" stroke="#b36b6b" stroke-width="3" fill="none"/>
-        <!-- セーラー襟＆服 -->
-        <path d="M90 260c10-60 22-118 60-118s50 58 60 118H90z" fill="url(#navy)"/>
-        <path d="M120 168h60l-18 18h-24z" fill="#ffffff"/>
-        <path d="M120 186h60l-12 12h-36z" fill="#d6ecff"/>
-        <!-- 赤いリボン -->
-        <g fill="#c62828">
-          <circle cx="150" cy="188" r="7"/>
-          <path d="M150 188l-18 10 6-16z"/>
-          <path d="M150 188l18 10-6-16z"/>
+
+        <ellipse cx="150" cy="282" rx="84" ry="13" fill="rgba(0,0,0,.12)"/>
+
+        <path d="M92 124c0-40 30-66 58-66 22 0 42 10 54 28 9 12 14 26 14 42 0 22-8 40-22 52-11 10-27 18-46 18-36 0-58-20-58-74z"
+              fill="url(#hairS2)"/>
+        <path d="M98 154c10 12 18 18 30 22-12 10-20 22-20 32-16-12-20-30-10-54z" fill="#5a2b22" opacity=".9"/>
+        <path d="M202 154c-10 12-18 18-30 22 12 10 20 22 20 32 16-12 20-30 10-54z" fill="#5a2b22" opacity=".9"/>
+
+        <g filter="url(#softShadowS2)">
+          <ellipse cx="150" cy="140" rx="50" ry="46" fill="url(#skinS2)"/>
+          <ellipse cx="122" cy="160" rx="12" ry="7" fill="#ff9db7" opacity=".38"/>
+          <ellipse cx="178" cy="160" rx="12" ry="7" fill="#ff9db7" opacity=".38"/>
+        </g>
+
+        <g>
+          <ellipse cx="130" cy="142" rx="10" ry="12" fill="#1f1f1f"/>
+          <ellipse cx="170" cy="142" rx="10" ry="12" fill="#1f1f1f"/>
+          <ellipse cx="130" cy="144" rx="7" ry="9" fill="url(#eyeS2)" opacity=".95"/>
+          <ellipse cx="170" cy="144" rx="7" ry="9" fill="url(#eyeS2)" opacity=".95"/>
+          <circle cx="126" cy="138" r="3" fill="#fff"/>
+          <circle cx="166" cy="138" r="3" fill="#fff"/>
+          <circle cx="133" cy="149" r="2" fill="#fff" opacity=".8"/>
+          <circle cx="173" cy="149" r="2" fill="#fff" opacity=".8"/>
+          <path d="M118 136c6-6 18-8 24 0" stroke="#1f1f1f" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M158 136c6-6 18-8 24 0" stroke="#1f1f1f" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </g>
+
+        <path d="M140 166c8 7 12 7 20 0" stroke="#b36b6b" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+        <g filter="url(#softShadowS2)">
+          <path d="M78 266c8-72 28-128 72-128s64 56 72 128H78z" fill="url(#navyS2)"/>
+          <path d="M106 170h88l-22 22h-44z" fill="#ffffff"/>
+          <path d="M112 182h76l-16 16h-44z" fill="#d9f0ff"/>
+          <path d="M110 176h80" stroke="#bfe6ff" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+        </g>
+
+        <g>
+          <circle cx="150" cy="196" r="8" fill="#ff3b6f"/>
+          <path d="M150 196l-20 12 7-18z" fill="#ff3b6f"/>
+          <path d="M150 196l20 12-7-18z" fill="#ff3b6f"/>
+          <path d="M150 204l-6 20h12z" fill="#d62a55" opacity=".9"/>
+          <path d="M172 188l3 6 6 3-6 3-3 6-3-6-6-3 6-3z" fill="#fff" opacity=".9"/>
         </g>
       </svg>
 
