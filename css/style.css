@@ -431,3 +431,15 @@ body{
     font-size:13px;
   }
 }
+
+<!-- ▼ 横向き案内 -->
+<div id="rotateNotice">
+  <div class="rotateInner">
+    <div class="rotateIcon">📱↻</div>
+    <div class="rotateTitle">横向きでご利用ください</div>
+    <div class="rotateText">
+      萌えセレクト講義は<br>
+      横画面専用で設計されています♡
+    </div>
+  </div>
+</div>
