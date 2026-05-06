@@ -432,14 +432,142 @@ body{
   }
 }
 
-<!-- ▼ 横向き案内 -->
-<div id="rotateNotice">
-  <div class="rotateInner">
-    <div class="rotateIcon">📱↻</div>
-    <div class="rotateTitle">横向きでご利用ください</div>
-    <div class="rotateText">
-      萌えセレクト講義は<br>
-      横画面専用で設計されています♡
-    </div>
-  </div>
-</div>
+/* =========================
+   横向き案内 iPhone見切れ対策版
+   ※ 既存の「横向き案内」CSSをこの内容で丸ごと置き換え
+========================= */
+
+#rotateNotice{
+  position:fixed;
+  inset:0;
+  z-index:999999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  padding:
+    max(18px, env(safe-area-inset-top))
+    max(18px, env(safe-area-inset-right))
+    max(18px, env(safe-area-inset-bottom))
+    max(18px, env(safe-area-inset-left));
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.7), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,.5), transparent 28%),
+    linear-gradient(180deg,#ffd6ea 0%,#fff0f7 100%);
+}
+
+#rotateNotice::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.35;
+  background-image:radial-gradient(#ff8fc3 1.6px, transparent 1.6px);
+  background-size:22px 22px;
+}
+
+.rotateInner{
+  position:relative;
+  z-index:2;
+  width:min(88vw, 440px);
+  max-height:calc(100svh - 48px);
+  overflow:hidden;
+  padding:24px 20px 22px;
+  text-align:center;
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.95), transparent 60%),
+    rgba(255,255,255,.86);
+  border:3px solid rgba(255,133,191,.75);
+  box-shadow:
+    0 18px 50px rgba(110,28,62,.18),
+    0 0 0 8px rgba(255,255,255,.35) inset;
+  backdrop-filter:blur(8px);
+}
+
+.rotateInner::before{
+  content:"♡ ♡ ♡";
+  position:static;
+  display:block;
+  transform:none;
+  color:#ff69af;
+  letter-spacing:.35em;
+  font-size:15px;
+  line-height:1;
+  margin-bottom:10px;
+  opacity:.85;
+}
+
+.rotateIcon{
+  font-size:52px;
+  line-height:1;
+  margin-bottom:12px;
+  animation:rotateFloat 2.4s ease-in-out infinite;
+}
+
+.rotateTitle{
+  font-size:clamp(21px, 7vw, 28px);
+  line-height:1.25;
+  font-weight:1000;
+  color:#f54296;
+  margin-bottom:10px;
+  text-shadow:0 2px 0 rgba(255,255,255,.8);
+}
+
+.rotateText{
+  font-size:clamp(14px, 4.2vw, 17px);
+  line-height:1.65;
+  font-weight:800;
+  color:#6b3b4f;
+}
+
+@keyframes rotateFloat{
+  0%{ transform:translateY(0) rotate(0deg); }
+  50%{ transform:translateY(-5px) rotate(8deg); }
+  100%{ transform:translateY(0) rotate(0deg); }
+}
+
+/* スマホ縦なら表示 */
+@media (orientation: portrait) and (max-width: 900px){
+  #rotateNotice{
+    display:flex;
+  }
+
+  .app{
+    display:none !important;
+  }
+
+  body{
+    overflow:hidden;
+    touch-action:none;
+  }
+}
+
+/* iPhone SEなど高さが低い端末用 */
+@media (orientation: portrait) and (max-height: 700px){
+  .rotateInner{
+    width:min(90vw, 390px);
+    padding:18px 16px 16px;
+    border-radius:24px;
+  }
+
+  .rotateInner::before{
+    font-size:13px;
+    margin-bottom:8px;
+  }
+
+  .rotateIcon{
+    font-size:42px;
+    margin-bottom:8px;
+  }
+
+  .rotateTitle{
+    font-size:22px;
+    margin-bottom:8px;
+  }
+
+  .rotateText{
+    font-size:14px;
+    line-height:1.5;
+  }
+}
