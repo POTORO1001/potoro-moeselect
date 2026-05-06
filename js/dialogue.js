@@ -163,3 +163,18 @@ window.addEventListener("keydown", (event) => {
 });
 
 window.addEventListener("load", renderLine);
+
+// 横向きチェック
+function checkOrientation(){
+  const isPortrait = window.innerHeight > window.innerWidth;
+
+  if(isPortrait){
+    document.body.classList.add("portrait-mode");
+  }else{
+    document.body.classList.remove("portrait-mode");
+  }
+}
+
+window.addEventListener("resize", checkOrientation);
+window.addEventListener("orientationchange", checkOrientation);
+window.addEventListener("load", checkOrientation);
