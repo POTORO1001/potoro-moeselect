@@ -1,8 +1,8 @@
 const DIALOGUE = [
   { speaker: "teacher", text: "おかえりなさい…ではなく、授業開始です。\n今日は「萌えセレクト」について学びましょう！" },
-  { speaker: "student", text: "先生、萌えセレクトとはなんですか？" },
+  { speaker: "student", text: "先輩、萌えセレクトとはなんですか？" },
   { speaker: "teacher", text: "いい質問ですね！\n萌えセレクトとは、お気に入りのメイドさんを独占してお話できるシステムです！" },
-  { speaker: "student", text: "先生、萌えセレクトの時間と料金を教えてください。" },
+  { speaker: "student", text: "先輩、萌えセレクトの時間と料金を教えてください。" },
   { speaker: "teacher", text: "30分／2,000円(税込)。\n席料＋指名料も込みで、追加料金はありません。" },
   { speaker: "student", text: "長く話したい場合はどうしたらいいですか？\n延長は可能ですか？" },
   { speaker: "teacher", text: "事前に利用したい時間の長さで予約すればOKです。\n延長も可能ですが、混雑状況によってはお断りされる場合があります。" },
