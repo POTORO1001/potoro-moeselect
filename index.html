@@ -1,89 +1,41 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>萌えセレクト講義｜PO・TORO</title>
-  <meta name="description" content="ポ・トロの萌えセレクトを可愛く学べる講義ページです。" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>萌えセレクト講義｜PO・TORO LESSON</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <main class="app" aria-label="萌えセレクト講義">
-    <section class="lecture-card">
-      <header class="lecture-header">
-        <div class="brand-badge">
-          <span class="brand-heart">♡</span>
-          <div>
-            <p class="brand-sub">PO・TORO lesson</p>
-            <h1>萌えセレクト講義</h1>
-          </div>
+    <section class="novel-stage">
+      <img class="scene-bg" src="img/scene_main.png" alt="萌えセレクト講義の背景" />
+
+      <div class="progress-panel" aria-label="講義の進捗">
+        <span class="progress-title">講義の進捗</span>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
         </div>
+        <span class="progress-count" id="progressCount">1 / 18</span>
+      </div>
 
-        <div class="lesson-status" aria-label="講義の進捗">
-          <span class="status-label">講義の進捗</span>
-          <div class="progress-shell">
-            <div class="progress-bar" id="progressBar"></div>
-          </div>
-          <span class="progress-count" id="progress">1 / 1</span>
-        </div>
-      </header>
+      <div class="speech-bubble teacher-bubble" id="teacherBubble">
+        <div class="speaker-badge">先生</div>
+        <p class="line-text" id="teacherLine"></p>
+      </div>
 
-      <section class="scene" aria-label="講義シーン">
-        <div class="lace-frame" aria-hidden="true"></div>
-        <div class="sparkles" aria-hidden="true"></div>
+      <div class="speech-bubble student-bubble" id="studentBubble">
+        <div class="speaker-badge">生徒</div>
+        <p class="line-text" id="studentLine"></p>
+      </div>
 
-        <div class="room">
-          <div class="window window-left" aria-hidden="true"></div>
-          <div class="window window-right" aria-hidden="true"></div>
+      <div class="tap-layer" id="tapLayer" aria-label="次へ進む"></div>
 
-          <div class="blackboard">
-            <div class="chalk-ribbon" aria-hidden="true">♡ lesson ♡</div>
-            <p class="board-title">ポ・トロの<br>萌えセレクトについて</p>
-            <p class="board-copy">いっしょに楽しく学ぼう！</p>
-            <div class="chalk-tray" aria-hidden="true"></div>
-          </div>
-
-          <div class="cafe-shelf" aria-hidden="true">
-            <span></span><span></span><span></span>
-          </div>
-
-          <div class="floor" aria-hidden="true"></div>
-          <div class="teacher-desk" aria-hidden="true"></div>
-          <div class="student-desk" aria-hidden="true"></div>
-
-          <img
-            id="teacherImg"
-            class="char teacher active"
-            src="img/teacher.png"
-            alt="先生役のメイド"
-            draggable="false"
-          />
-
-          <img
-            id="studentImg"
-            class="char student"
-            src="img/student.png"
-            alt="生徒役のメイド"
-            draggable="false"
-          />
-
-          <article class="bubble left" id="bubble" aria-live="polite">
-            <div class="speaker-row">
-              <span class="speaker-mark" id="speakerIcon">♡</span>
-              <small id="speaker">先生</small>
-            </div>
-            <p id="line">おかえりなさい…ではなく、授業開始です。</p>
-          </article>
-        </div>
-      </section>
-
-      <nav class="hud" aria-label="会話操作">
-        <button type="button" id="prev" class="btn sub">‹ 前へ</button>
-        <button type="button" id="auto" class="btn main">▶ オート再生</button>
-        <button type="button" id="next" class="btn primary">次へ ›</button>
+      <nav class="control-bar" aria-label="操作ボタン">
+        <button type="button" class="control-btn sub" id="prevBtn">‹ 前へ</button>
+        <button type="button" class="control-btn auto" id="autoBtn">▶ オート再生</button>
+        <button type="button" class="control-btn main" id="nextBtn">次へ ›</button>
       </nav>
-
-      <p class="note">画像差し替え：<code>img/teacher.png</code> / <code>img/student.png</code> / <code>img/teacher_happy.png</code> / <code>img/student_smile.png</code></p>
     </section>
   </main>
 
